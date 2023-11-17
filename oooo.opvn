@@ -1,13 +1,14 @@
 # Automatically generated OpenVPN client config file
-# Generated on Mon Nov 13 22:47:48 2023 by openvpnas2
+# Generated on Fri Nov 17 16:26:26 2023 by openvpnas2
 # Note: this config file contains inline private keys
 #       and therefore should be kept confidential!
-#       Certificate serial: 896929572263955065, certificate common name: openvpn
-#       Expires 2033-11-10 22:47:48
+#       Certificate serial: 6182075433424677420, certificate common name: openvpn_AUTOLOGIN
+#       Expires 2033-11-14 16:26:25
 # Note: this configuration is user-locked to the username below
 # OVPN_ACCESS_SERVER_USERNAME=openvpn
 # Define the profile name of this particular configuration file
-# OVPN_ACCESS_SERVER_PROFILE=openvpn@177.67.24.248
+# OVPN_ACCESS_SERVER_PROFILE=openvpn@177.67.24.248/AUTOLOGIN
+# OVPN_ACCESS_SERVER_AUTOLOGIN=1
 
 # Default Cipher
 cipher AES-256-CBC
@@ -48,10 +49,11 @@ remote-cert-tls server
 tls-version-min 1.2
 reneg-sec 604800
 tun-mtu 1420
-auth-user-pass
 verb 3
-push-peer-info
-
+no push-peer-info
+no pull
+route 10.0.252.0 255.255.255.0
+#route 10.0.252.242 255.255.255.255
 <ca>
 -----BEGIN CERTIFICATE-----
 MIIBeTCB/6ADAgECAgRlUXFLMAoGCCqGSM49BAMCMBUxEzARBgNVBAMMCk9wZW5W
@@ -66,23 +68,23 @@ GoG4jsGiyXsq96bU2hKFyqWW4nKhYGPwbercrctBC1ydcWkDGt2eiFD3t4Sh
 </ca>
 <cert>
 -----BEGIN CERTIFICATE-----
-MIIBoDCCASWgAwIBAgIIDHKIsZ9WCnkwCgYIKoZIzj0EAwIwFTETMBEGA1UEAwwK
-T3BlblZQTiBDQTAeFw0yMzExMTIyMjQ3NDhaFw0zMzExMTAyMjQ3NDhaMBIxEDAO
-BgNVBAMMB29wZW52cG4wdjAQBgcqhkjOPQIBBgUrgQQAIgNiAAQYX9xIzRpnH+ks
-r6QKB14GxwwVR3oPfVyfpQqEWaDs2q4kt6AywjZkBf67X4M8xv6rYLSIANw2kt8H
-2GMhjsugHOaJfTyeO9iyv9DdgLSKYOSh0DFxWoUthmR5+4KyvJCjRTBDMAwGA1Ud
-EwEB/wQCMAAwCwYDVR0PBAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMCMBEGCWCG
-SAGG+EIBAQQEAwIHgDAKBggqhkjOPQQDAgNpADBmAjEA3NFhjBn/ackug6zcMF3m
-ZPciVVjU32sVM5gBuezgFU8YbiuL3h2wDTz3Drt+/VPIAjEA6U1YvbxnAFxLF2nl
-AXn+oL4lehbwRi/l8p9do6sTuJJixHyeNUtBb3ByDPnzUBj0
+MIIBqTCCAS+gAwIBAgIIVcsk2kfyaiwwCgYIKoZIzj0EAwIwFTETMBEGA1UEAwwK
+T3BlblZQTiBDQTAeFw0yMzExMTYxNjI2MjVaFw0zMzExMTQxNjI2MjVaMBwxGjAY
+BgNVBAMMEW9wZW52cG5fQVVUT0xPR0lOMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAE
+EomJulOxv6xCyFjZazNXaynjl1NkwPZ81Sa1rm6kIG9vfwI9PidVdTe+2DDYC4uU
+Zv9UdBiztaOV48dYJH6oGYEGuKhXl63H6DBTxX0RQ3gExc+54AUSMq/6pJFhFAME
+o0UwQzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIHgDATBgNVHSUEDDAKBggrBgEF
+BQcDAjARBglghkgBhvhCAQEEBAMCB4AwCgYIKoZIzj0EAwIDaAAwZQIwDBwPghSc
+1EPKd9ZdqwAw0lWpofsgKimS7/sDzVBInR2yvNCAljATzaJ6e0aXVGNMAjEA7VUw
+SUcPOpTjHMs4DRzHf/Co4wo2zccak+z6hjWAmupH7beW/8CYwV58K+1Jar+O
 -----END CERTIFICATE-----
 </cert>
 <key>
 -----BEGIN PRIVATE KEY-----
-MIG2AgEAMBAGByqGSM49AgEGBSuBBAAiBIGeMIGbAgEBBDCHu++MwqapjAYQ5zKz
-fcpMCDATo3xbI6RO027K/bc3EORlUsObQuFv5/i+R+HPnYOhZANiAAQYX9xIzRpn
-H+ksr6QKB14GxwwVR3oPfVyfpQqEWaDs2q4kt6AywjZkBf67X4M8xv6rYLSIANw2
-kt8H2GMhjsugHOaJfTyeO9iyv9DdgLSKYOSh0DFxWoUthmR5+4KyvJA=
+MIG2AgEAMBAGByqGSM49AgEGBSuBBAAiBIGeMIGbAgEBBDBWxym2gLN/a0ylOzgT
+j5HzJusKaew1dhnheVfNhTuKwt5z29yhIpRQWr0r8MN83u+hZANiAAQSiYm6U7G/
+rELIWNlrM1drKeOXU2TA9nzVJrWubqQgb29/Aj0+J1V1N77YMNgLi5Rm/1R0GLO1
+o5Xjx1gkfqgZgQa4qFeXrcfoMFPFfRFDeATFz7ngBRIyr/qkkWEUAwQ=
 -----END PRIVATE KEY-----
 </key>
 <tls-crypt>
@@ -110,9 +112,9 @@ b1639e5bc974263312c040617e49355b
 </tls-crypt>
 ## -----BEGIN RSA SIGNATURE-----
 ## DIGEST:sha256
-## MGYCMQDHKG3e0k+T+nQViznaNvUziiGpk6G7pD23+AAHN5dK0d
-## OT+zZtftlXl+3Q2JHiojMCMQC0bAg2a4i4ydorjvZR9Ia/e0LE
-## gxfawyEPEVGacv0V6gpySVD6ZkiX4BDm6LNG7r0=
+## MGYCMQDEq5d6RfLK0PYFzCz7MepALnoJxU/mChsXdiAnH4awfT
+## +9urkn0bpHcyFSG6eGaRMCMQDFFG0mF+AY9uWZKFbfGAiTHZ7m
+## DVbAH6oIb+4jaHRhP8VhGZhqjmq8PRvC4H9q+RQ=
 ## -----END RSA SIGNATURE-----
 ## -----BEGIN CERTIFICATE-----
 ## MIIBzzCCAVagAwIBAgIFAMqv9cgwCgYIKoZIzj0EAwIwPDE6MDgGA1UEAwwxT3Bl
